@@ -1,3 +1,4 @@
+// DOM Elements
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
 const uppercaseEl = document.getElementById('uppercase');
@@ -14,8 +15,19 @@ const randomFunc = {
     symbol: getRandomSymbol
 };
 
-// Generate Function
+generateEl.addEventListener('click', () => {
+    const length = lengthEl.value;
+    const hasLower = lowercaseEl.checked;
+    const hasUpper = uppercaseEl.checked;
+    const hasNumber = numbersEl.checked;
+    const hasSymbol = symbolsEl.checked;
 
+    resultEl.innerText =  generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+});
+
+function generatePassword(lower, upper, number, symbol, length){
+    
+}
 // Lower Case alpha generator
 function getRandomLower(){
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
